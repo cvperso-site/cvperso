@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mael Guimoyas – Portfolio Data / Base de données</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts: IBM Plex Sans + IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ------------------------------
+           RESET MINIMAL
+        --------------------------------*/
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #111827;
+            background-color: #F9FAFB;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ------------------------------
+           THEME / TOKENS
+        --------------------------------*/
+        :root {
+            --accent: #1C3C75;
+            --accent-soft: #9BA8B8;
+            --border-subtle: #E5E7EB;
+            --bg-surface: #FFFFFF;
+            --bg-page: #F9FAFB;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-pill: 999px;
+            --shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.06);
+            --space-xs: 0.4rem;
+            --space-sm: 0.75rem;
+            --space-md: 1.25rem;
+            --space-lg: 2.25rem;
+            --space-xl: 3.5rem;
+            --max-width: 960px;
+        }
+
+        /* ------------------------------
+           LAYOUT
+        --------------------------------*/
+        .page {
+            background: var(--bg-page);
+        }
+
+        .container {
+            width: min(var(--max-width), 100% - 2.5rem);
+            margin-inline: auto;
+        }
+
+        /* ------------------------------
+           HEADER
+        --------------------------------*/
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background-color: rgba(249, 250, 251, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block: 0.8rem;
+            gap: 1.25rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--accent-soft);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background-color: var(--bg-surface);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .brand-name {
+            font-weight: 500;
+            font-size: 0.98rem;
+        }
+
+        .brand-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            font-size: 0.85rem;
+        }
+
+        .main-nav a {
+            position: relative;
+            color: #4B5563;
+            padding-block: 0.15rem;
+        }
+
+        .main-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -0.1rem;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent);
+            transition: width 0.15s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--text-main);
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ------------------------------
+           HERO
+        --------------------------------*/
+        .hero {
+            padding-block: var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
+            background: var(--bg-surface);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+            gap: var(--space-lg);
+            align-items: flex-start;
+        }
+
+        .hero-tagline {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--accent-soft);
+            margin-bottom: var(--space-xs);
+        }
+
+        .hero-title {
+            font-size: clamp(1.9rem, 3vw, 2.3rem);
+            line-height: 1.2;
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-text {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            max-width: 32rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid transparent;
+            font-size: 0.86rem;
+            font-weight: 500;
+            cursor: pointer;
+            background: transparent;
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #F9FAFB;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: #12294F;
+            border-color: #12294F;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            border-color: var(--border-subtle);
+            color: #111827;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            font-size: 0.82rem;
+        }
+
+        .hero-meta-block {
+            padding: 0.65rem 0.75rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+        }
+
+        .hero-meta-label {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent-soft);
+            margin-bottom: 0.1rem;
+        }
+
+        .hero-meta-value {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+        }
+
+        .hero-tags {
+            margin-top: var(--space-sm);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .tag {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            padding: 0.25rem 0.55rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+            color: #4B5563;
+        }
+
+        /* ------------------------------
+           SECTION GENERIC
+        --------------------------------*/
+        .sections {
+            padding-block: var(--space-lg);
+        }
+
+        .section {
+            padding-block: var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+            padding-bottom: var(--space-xl);
+        }
+
+        .section-inner {
+            display: grid;
+            grid-template-columns: 140px minmax(0, 1fr);
+            column-gap: var(--space-lg);
+            align-items: flex-start;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            color: var(--accent-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            padding-top: 0.25rem;
+        }
+
+        .section-label span {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .section-lead {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 40rem;
+        }
+
+        .text-muted {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+        }
+
+        /* ------------------------------
+           ABOUT
+        --------------------------------*/
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .about-block-title {
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent-soft);
+            margin-bottom: 0.3rem;
+        }
+
+        .about-block-body {
+            font-size: 0.9rem;
+            color: #374151;
+        }
+
+        .mono {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+        }
+
+        .work-philosophy {
+            padding: 0.9rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+            font-size: 0.88rem;
+            color: #4B5563;
+        }
+
+        .work-philosophy-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--accent-soft);
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        /* ------------------------------
+           SKILLS
+        --------------------------------*/
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-md);
+        }
+
+        .skill-block-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-block-body {
+            font-size: 0.88rem;
+            color: #4B5563;
+            margin-bottom: 0.35rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .skill-tag {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+        }
+
+        /* ------------------------------
+           PROJECTS
+        --------------------------------*/
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .project {
+            padding: 1.1rem 1.2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid #E5E7EB;
+            background-color: #FFFFFF;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-title {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .project-meta {
+            font-size: 0.8rem;
+            color: var(--accent-soft);
+            white-space: nowrap;
+        }
+
+        .project-subtitle {
+            font-size: 0.88rem;
+            color: #4B5563;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-body {
+            font-size: 0.88rem;
+            color: #4B5563;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-list {
+            margin: 0.35rem 0 0.2rem;
+            padding-left: 1.15rem;
+            font-size: 0.86rem;
+            color: #4B5563;
+        }
+
+        .project-list li + li {
+            margin-top: 0.15rem;
+        }
+
+        .project-tech {
+            margin-top: 0.4rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: #374151;
+        }
+
+        /* ------------------------------
+           EXPERIENCE / EDUCATION
+        --------------------------------*/
+        .two-columns {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: var(--space-md);
+        }
+
+        .timeline {
+            border-left: 1px solid #E5E7EB;
+            padding-left: 1rem;
+            margin-top: 0.35rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -0.55rem;
+            top: 0.45rem;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            background-color: var(--bg-page);
+        }
+
+        .timeline-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .timeline-meta {
+            font-size: 0.78rem;
+            color: var(--accent-soft);
+            margin: 0.1rem 0 0.25rem;
+        }
+
+        .timeline-body {
+            font-size: 0.86rem;
+            color: #4B5563;
+        }
+
+        .section-subheading {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.6rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ------------------------------
+           CONTACT
+        --------------------------------*/
+        .contact-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: var(--space-md);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .field label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.15rem;
+        }
+
+        .field input,
+        .field textarea {
+            width: 100%;
+            padding: 0.55rem 0.6rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid #D1D5DB;
+            background-color: #FFFFFF;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #111827;
+        }
+
+        .field textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: #4B5563;
+        }
+
+        .contact-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--accent-soft);
+            margin-bottom: 0.25rem;
+        }
+
+        /* ------------------------------
+           FOOTER
+        --------------------------------*/
+        .site-footer {
+            border-top: 1px solid var(--border-subtle);
+            padding-block: 0.9rem;
+            background-color: #FFFFFF;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        /* ------------------------------
+           RESPONSIVE
+        --------------------------------*/
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-meta {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .section-inner {
+                grid-template-columns: minmax(0, 1fr);
+                row-gap: 1rem;
+            }
+
+            .section-label {
+                order: -1;
+            }
+
+            .about-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .two-columns,
+            .contact-layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .main-nav {
+                font-size: 0.8rem;
+                gap: 0.8rem;
+            }
+
+            .about-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="page">
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="brand">
+            <span class="brand-mark">MG</span>
+            <div class="brand-text">
+                <span class="brand-name">Mael Guimoyas</span>
+                <span class="brand-role">Étudiant BUT Informatique · Parcours base de données</span>
+            </div>
+        </div>
+        <nav class="main-nav" aria-label="Navigation principale">
+            <a href="#about">01. À propos</a>
+            <a href="#skills">02. Compétences</a>
+            <a href="#projects">03. Projets</a>
+            <a href="#experience">04. Parcours</a>
+            <a href="#contact">05. Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="container hero-inner">
+            <div>
+                <div class="hero-tagline">Profil orienté données · Stage Data Analyst / Base de données</div>
+                <h1 class="hero-title">
+                    Je structure et exploite les <span>données</span><br>pour des décisions fiables.
+                </h1>
+                <p class="hero-text">
+                    Étudiant en 2ᵉ année de BUT Informatique (parcours base de données) à l’Université Savoie Mont-Blanc,
+                    je travaille sur la modélisation, la qualité et l’analyse de données, avec un socle solide en SQL,
+                    PowerBI et développement C# / WPF.
+                </p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">Télécharger mon CV</a>
+                    <a href="#contact" class="btn btn-ghost">Me contacter pour un stage</a>
+                </div>
+            </div>
+            <aside>
+                <div class="hero-meta">
+                    <div class="hero-meta-block">
+                        <div class="hero-meta-label">Statut</div>
+                        <div class="hero-meta-value">BUT2 Informatique · USMB</div>
+                    </div>
+                    <div class="hero-meta-block">
+                        <div class="hero-meta-label">Parcours</div>
+                        <div class="hero-meta-value">Base de données</div>
+                    </div>
+                    <div class="hero-meta-block">
+                        <div class="hero-meta-label">Objectif</div>
+                        <div class="hero-meta-value">Stage Data / BDD</div>
+                    </div>
+                    <div class="hero-meta-block">
+                        <div class="hero-meta-label">Disponibilité</div>
+                        <div class="hero-meta-value">Selon calendrier BUT</div>
+                    </div>
+                </div>
+                <div class="hero-tags">
+                    <span class="tag">SQL · PostgreSQL</span>
+                    <span class="tag">PowerBI</span>
+                    <span class="tag">C# · WPF</span>
+                    <span class="tag">Modélisation PowerAMC</span>
+                    <span class="tag">HTML · CSS · JS · PHP</span>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <div class="sections">
+
+        <!-- 01. À PROPOS -->
+        <section class="section" id="about">
+            <div class="container section-inner">
+                <div class="section-label"><span>01</span> · À propos</div>
+                <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Profil</h2>
+                        <p class="section-lead">
+                            Je me spécialise dans la conception et l’exploitation de bases de données, avec une attention
+                            particulière portée à la qualité des modèles, à la lisibilité du code et à la fiabilité des résultats.
+                            Mes projets universitaires m’ont amené à travailler sur des applications WPF, des schémas de bases
+                            de données complets et des visualisations PowerBI.
+                        </p>
+                        <p class="text-muted">
+                            En parallèle de mes études, je pratique des activités d’endurance comme le trekking, le trail
+                            et la randonnée. Ces expériences (Tour du Mont Blanc en autonomie, trek de 5 jours en Italie
+                            en bivouac) m’ont appris à préparer, anticiper et suivre un plan dans la durée – des qualités
+                            que j’applique à mes projets informatiques.
+                        </p>
+                    </div>
+
+                    <div class="work-philosophy">
+                        <span class="work-philosophy-label">Philosophie de travail</span>
+                        Je privilégie des solutions simples, documentées et reproductibles. Comprendre le besoin métier,
+                        structurer la donnée proprement, puis restituer les résultats de manière claire et actionnable
+                        est le fil conducteur de mes projets.
+                    </div>
+
+                    <div class="about-grid">
+                        <div>
+                            <div class="about-block-title">Diplômes</div>
+                            <div class="about-block-body">
+                                BUT Informatique – Parcours base de données (en cours)<br>
+                                Université Savoie Mont-Blanc<br><br>
+                                BAC STI2D (2024) – Lycée Charles Poncet
+                            </div>
+                        </div>
+                        <div>
+                            <div class="about-block-title">Langues</div>
+                            <div class="about-block-body">
+                                Français (natif)<br>
+                                Anglais C1<br>
+                                Italien B1<br>
+                                Espagnol A2
+                            </div>
+                        </div>
+                        <div>
+                            <div class="about-block-title">Centres d’intérêt</div>
+                            <div class="about-block-body">
+                                Snowboard, escalade, trekking, trail, randonnée.<br>
+                                Intérêt pour les statistiques et l’analyse de performances (ex : Counter-Strike).
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. COMPÉTENCES -->
+        <section class="section" id="skills">
+            <div class="container section-inner">
+                <div class="section-label"><span>02</span> · Compétences</div>
+                <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Compétences techniques</h2>
+                        <p class="section-lead">
+                            Un profil orienté données, avec une base solide en développement, modélisation de bases de
+                            données et visualisation.
+                        </p>
+                    </div>
+
+                    <div class="skills-grid">
+                        <div>
+                            <div class="skill-block-title">Développement web</div>
+                            <div class="skill-block-body">
+                                Conception de petites applications et sites web, côté front et back, avec une structure
+                                claire et maintenable.
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-block-title">Bases de données & données</div>
+                            <div class="skill-block-body">
+                                Conception de schémas (MCD / MLD), écriture de requêtes et production de vues décisionnelles
+                                via des tableaux de bord.
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">PowerBI</span>
+                                <span class="skill-tag">Excel → BDD</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-block-title">C# / WPF</div>
+                            <div class="skill-block-body">
+                                Applications desktop avec interface graphique, logique métier et accès aux données.
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">WPF</span>
+                                <span class="skill-tag">Visual Studio</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-block-title">Modélisation</div>
+                            <div class="skill-block-body">
+                                Modélisation conceptuelle et logique pour des applications transactionnelles ou des usages
+                                décisionnels.
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PowerAMC</span>
+                                <span class="skill-tag">MCD / MLD</span>
+                                <span class="skill-tag">Conception BDD</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-block-title">Outils</div>
+                            <div class="skill-block-body">
+                                Utilisation d’outils orientés développement et data pour structurer, manipuler et analyser
+                                les données.
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Visual Studio</span>
+                                <span class="skill-tag">Excel</span>
+                                <span class="skill-tag">PowerBI</span>
+                                <span class="skill-tag">Raspberry Pi</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-block-title">Soft skills</div>
+                            <div class="skill-block-body">
+                                Habitude du travail régulier, du rythme soutenu (cours + travail le week-end) et des projets
+                                de groupe notés.
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Travail en équipe</span>
+                                <span class="skill-tag">Rigueur</span>
+                                <span class="skill-tag">Organisation</span>
+                                <span class="skill-tag">Orientation résultats</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. PROJETS -->
+        <section class="section" id="projects">
+            <div class="container section-inner">
+                <div class="section-label"><span>03</span> · Projets</div>
+                <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Projets sélectionnés</h2>
+                        <p class="section-lead">
+                            Projets universitaires réalisés en groupe dans le cadre des SAE, illustrant la façon dont
+                            je travaille avec les données, les interfaces et l’infrastructure.
+                        </p>
+                    </div>
+
+                    <div class="projects-list">
+
+                        <article class="project">
+                            <header class="project-header">
+                                <h3 class="project-title">Base de données complète & tableau de bord PowerBI</h3>
+                                <span class="project-meta">USMB · 2025</span>
+                            </header>
+                            <p class="project-subtitle">
+                                De la modélisation à la visualisation : conception d’une base de données relationnelle,
+                                alimentation en données et création d’un tableau de bord synthétique.
+                            </p>
+                            <p class="project-body">
+                                Projet de groupe visant à partir d’un besoin métier pour concevoir le schéma, écrire les
+                                requêtes SQL et proposer une vue décisionnelle claire.
+                            </p>
+                            <ul class="project-list">
+                                <li>Modélisation sous PowerAMC (MCD / MLD) à partir d’un cahier des charges.</li>
+                                <li>Mise en place du schéma sous PostgreSQL et insertion des données.</li>
+                                <li>Création de mesures et visualisations dans PowerBI pour répondre à des questions métiers précises.</li>
+                            </ul>
+                            <div class="project-tech">
+                                Stack : PostgreSQL · SQL · PowerAMC · PowerBI
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <header class="project-header">
+                                <h3 class="project-title">Application WPF de gestion des ventes</h3>
+                                <span class="project-meta">USMB · 2025</span>
+                            </header>
+                            <p class="project-subtitle">
+                                Application desktop C# / WPF pour la gestion de clients, produits et commandes, connectée
+                                à une base de données.
+                            </p>
+                            <ul class="project-list">
+                                <li>Écrans de gestion des entités (clients, produits, commandes) avec logique métier.</li>
+                                <li>Connexion à une base de données relationnelle et respect des contraintes d’intégrité.</li>
+                                <li>Code structuré permettant des évolutions et une maintenance facilitée.</li>
+                            </ul>
+                            <div class="project-tech">
+                                Stack : C# · WPF · SQL · Visual Studio
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <header class="project-header">
+                                <h3 class="project-title">Jeu vidéo en WPF</h3>
+                                <span class="project-meta">USMB · 2025</span>
+                            </header>
+                            <p class="project-subtitle">
+                                Jeu vidéo développé en C# / WPF, avec gestion de l’état du jeu et des interactions
+                                utilisateur.
+                            </p>
+                            <ul class="project-list">
+                                <li>Organisation du code en couches pour séparer logique, affichage et données.</li>
+                                <li>Gestion des événements et de l’état (scores, progression, conditions de victoire).</li>
+                                <li>Interface utilisateur simple et lisible.</li>
+                            </ul>
+                            <div class="project-tech">
+                                Stack : C# · WPF
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <header class="project-header">
+                                <h3 class="project-title">Maquette de site web (Figma)</h3>
+                                <span class="project-meta">USMB · 2025</span>
+                            </header>
+                            <p class="project-body">
+                                Conception d’une maquette de site web pour un client fictif, avec travail sur la
+                                structure de l’information et l’ergonomie des pages.
+                            </p>
+                            <div class="project-tech">
+                                Outil : Figma
+                            </div>
+                        </article>
+
+                        <article class="project">
+                            <header class="project-header">
+                                <h3 class="project-title">Machine virtuelle & hébergement sur Raspberry Pi</h3>
+                                <span class="project-meta">USMB · 2025</span>
+                            </header>
+                            <p class="project-body">
+                                Installation et configuration d’une machine virtuelle pour un client fictif, puis
+                                hébergement d’un site web sécurisé sur Raspberry Pi.
+                            </p>
+                            <ul class="project-list">
+                                <li>Configuration de services sur machine virtuelle et documentation associée.</li>
+                                <li>Installation et sécurisation d’un serveur web sur Raspberry Pi.</li>
+                                <li>Réflexion sur la robustesse et la sécurité de l’hébergement.</li>
+                            </ul>
+                            <div class="project-tech">
+                                Stack : Linux · Raspberry Pi · Serveur web
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04. PARCOURS -->
+        <section class="section" id="experience">
+            <div class="container section-inner">
+                <div class="section-label"><span>04</span> · Parcours</div>
+                <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Expériences & formation</h2>
+                        <p class="section-lead">
+                            Un parcours combinant projets universitaires structurés et expériences professionnelles avec
+                            un rythme régulier de travail.
+                        </p>
+                    </div>
+
+                    <div class="two-columns">
+                        <div>
+                            <div class="section-subheading">Expériences professionnelles</div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-title">Employé drive – Super U</div>
+                                    <div class="timeline-meta">02/2023 – 01/2024 · Tous les samedis</div>
+                                    <div class="timeline-body">
+                                        Préparation des commandes clients, gestion du rythme et du travail en équipe dans
+                                        un environnement exigeant (horaires 6h45–14h45 en parallèle du lycée).
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-title">Manutention – ACR (intérim)</div>
+                                    <div class="timeline-meta">04/2025 · 2 jours</div>
+                                    <div class="timeline-body">
+                                        Mission de manutention logistique, respect des consignes de sécurité et adaptation
+                                        rapide à une nouvelle organisation.
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-title">Projets SAE – Université Savoie Mont-Blanc</div>
+                                    <div class="timeline-meta">2024–2025 · Annecy-le-Vieux</div>
+                                    <div class="timeline-body">
+                                        Six projets de groupe mêlant développement, bases de données et infrastructure,
+                                        avec livrables notés et présentations orales.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="section-subheading">Formation</div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-title">BUT Informatique – Parcours base de données</div>
+                                    <div class="timeline-meta">Depuis 09/2024 · Université Savoie Mont-Blanc</div>
+                                    <div class="timeline-body">
+                                        Deuxième année de BUT, orientée vers les bases de données, le développement
+                                        d’applications, les réseaux et la gestion de projet.
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-title">BAC STI2D</div>
+                                    <div class="timeline-meta">2024 · Lycée Charles Poncet</div>
+                                    <div class="timeline-body">
+                                        Baccalauréat Sciences et Technologies de l’Industrie et du Développement Durable.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-subheading">Langues</div>
+                            <p class="mono">
+                                Français (natif) · Anglais C1 · Italien B1 · Espagnol A2
+                            </p>
+
+                            <div class="section-subheading">Centres d’intérêt</div>
+                            <p class="mono">
+                                Snowboard · Escalade · Trekking · Trail · Randonnée · Counter-Strike
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 05. CONTACT -->
+        <section class="section" id="contact">
+            <div class="container section-inner">
+                <div class="section-label"><span>05</span> · Contact</div>
+                <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Me contacter</h2>
+                        <p class="section-lead">
+                            Ouvert aux opportunités de stage en <strong>data</strong>, <strong>base de données</strong>
+                            ou <strong>développement</strong>. Vous pouvez me contacter via ce formulaire ou par email.
+                        </p>
+                    </div>
+
+                    <div class="contact-layout">
+                        <form class="contact-form" action="#" method="post">
+                            <div class="field">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="field">
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </form>
+
+                        <div class="contact-details">
+                            <div>
+                                <div class="contact-label">Coordonnées</div>
+                                <p>
+                                    Email&nbsp;: <span class="mono">mael.guimoyas[at]exemple.com</span><br>
+                                    Basé à&nbsp;: Annecy / région Savoie (FR)
+                                </p>
+                            </div>
+                            <div>
+                                <div class="contact-label">Réseaux</div>
+                                <p class="mono">
+                                    GitHub · LinkedIn (liens à renseigner)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>© <span id="year"></span> Mael Guimoyas</span>
+        <span>Portfolio · BUT Informatique – Parcours base de données</span>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll fluide simple
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
