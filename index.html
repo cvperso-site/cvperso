@@ -697,12 +697,18 @@
             </div>
         </div>
         <nav class="main-nav" aria-label="Navigation principale">
-            <a href="#about">01. À propos</a>
-            <a href="#skills">02. Compétences</a>
-            <a href="#projects">03. Projets</a>
-            <a href="#experience">04. Parcours</a>
-            <a href="#contact">05. Contact</a>
-        </nav>
+    <a href="#about" data-i18n="nav.about"></a>
+    <a href="#skills" data-i18n="nav.skills"></a>
+    <a href="#projects" data-i18n="nav.projects"></a>
+    <a href="#experience" data-i18n="nav.experience"></a>
+    <a href="#contact" data-i18n="nav.contact"></a>
+</nav>
+
+<div class="lang-switcher">
+    <button data-lang="fr">FR</button>
+    <button data-lang="en">EN</button>
+</div>
+
     </div>
 </header>
 
@@ -1178,19 +1184,42 @@
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+let translations = {};
+let currentLang = "fr";
 
-    // Scroll fluide simple
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener("click", function (e) {
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: "smooth" });
-            }
-        });
+async function loadTranslations() {
+    try {
+        const response = await fetch("translation_file.json");
+        translations = await response.json();
+        applyTranslations();
+    } catch (err) {
+        console.error("Erreur de chargement du fichier de traduction :", err);
+    }
+}
+
+function applyTranslations() {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const text = getNestedTranslation(key, translations[currentLang]);
+        if (text) el.innerHTML = text;
     });
+}
+
+// Permet d’accéder à nav.about → translations.fr.nav.about
+function getNestedTranslation(path, obj) {
+    return path.split('.').reduce((o, k) => o && o[k], obj);
+}
+
+document.addEventListener("click", e => {
+    if (e.target.matches("[data-lang]")) {
+        currentLang = e.target.getAttribute("data-lang");
+        applyTranslations();
+    }
+});
+
+loadTranslations();
 </script>
+
 
 </body>
 </html>
