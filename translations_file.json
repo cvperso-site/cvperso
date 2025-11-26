@@ -1,0 +1,290 @@
+{
+  "en": {
+    "nav": {
+      "about": "01. About",
+      "skills": "02. Skills",
+      "projects": "03. Projects",
+      "experience": "04. Background",
+      "contact": "05. Contact"
+    },
+    "hero": {
+      "tagline": "Data-oriented profile · Data Analyst / Database Internship",
+      "title": "I structure and leverage <span>data</span><br>for reliable decisions.",
+      "description": "2nd-year IT student (database track) at Université Savoie Mont-Blanc, working on data modeling, quality, and analysis, with solid foundations in SQL, PowerBI, and C# / WPF development.",
+      "downloadCV": "Download my CV",
+      "contactMe": "Contact me for an internship",
+      "status": "Status",
+      "statusValue": "IT Year 2 · USMB",
+      "track": "Track",
+      "trackValue": "Database",
+      "objective": "Objective",
+      "objectiveValue": "Data / DB Internship",
+      "availability": "Availability",
+      "availabilityValue": "According to BUT calendar"
+    },
+    "about": {
+      "title": "Profile",
+      "lead": "I specialize in designing and leveraging databases, with particular attention to model quality, code readability, and result reliability. My university projects have led me to work on WPF applications, complete database schemas, and PowerBI visualizations.",
+      "paragraph": "Alongside my studies, I practice endurance activities like trekking, trail running, and hiking. These experiences (Tour du Mont Blanc independently, 5-day trek in Italy camping) taught me to prepare, anticipate, and follow a plan over time – qualities I apply to my IT projects.",
+      "philosophy": "Work philosophy",
+      "philosophyText": "I favor simple, documented, and reproducible solutions. Understanding business needs, structuring data properly, then presenting results clearly and actionably is the guiding principle of my projects.",
+      "degrees": "Degrees",
+      "degreesText": "IT Degree – Database track (in progress)<br>Université Savoie Mont-Blanc<br><br>STI2D High School Diploma (2024) – Lycée Charles Poncet",
+      "languages": "Languages",
+      "languagesText": "French (native)<br>English C1<br>Italian B1<br>Spanish A2",
+      "interests": "Interests",
+      "interestsText": "Snowboarding, climbing, trekking, trail running, hiking.<br>Interest in statistics and performance analysis (e.g., Counter-Strike)."
+    },
+    "skills": {
+      "title": "Technical skills",
+      "lead": "A data-oriented profile with solid foundations in development, database modeling, and visualization.",
+      "webDev": "Web development",
+      "webDevDesc": "Design of small applications and websites, front and back end, with clear and maintainable structure.",
+      "database": "Databases & data",
+      "databaseDesc": "Schema design (ERD / LRD), query writing, and production of decision-making views via dashboards.",
+      "csharp": "C# / WPF",
+      "csharpDesc": "Desktop applications with graphical interface, business logic, and data access.",
+      "modeling": "Modeling",
+      "modelingDesc": "Conceptual and logical modeling for transactional applications or decision-making purposes.",
+      "tools": "Tools",
+      "toolsDesc": "Using development and data-oriented tools to structure, manipulate, and analyze data.",
+      "softSkills": "Soft skills",
+      "softSkillsDesc": "Habit of regular work, sustained pace (classes + weekend work), and graded group projects."
+    },
+    "projects": {
+      "title": "Selected projects",
+      "lead": "University projects completed in groups as part of SAE, illustrating how I work with data, interfaces, and infrastructure.",
+      "project1": {
+        "title": "Complete database & PowerBI dashboard",
+        "subtitle": "From modeling to visualization: designing a relational database, data feeding, and creating a synthetic dashboard.",
+        "body": "Group project aiming to start from a business need to design the schema, write SQL queries, and provide a clear decision-making view.",
+        "item1": "Modeling with PowerAMC (ERD / LRD) from specifications.",
+        "item2": "Schema implementation in PostgreSQL and data insertion.",
+        "item3": "Creation of measures and visualizations in PowerBI to answer specific business questions."
+      },
+      "project2": {
+        "title": "WPF sales management application",
+        "subtitle": "C# / WPF desktop application for managing customers, products, and orders, connected to a database.",
+        "item1": "Entity management screens (customers, products, orders) with business logic.",
+        "item2": "Connection to a relational database with integrity constraints compliance.",
+        "item3": "Structured code allowing for easy evolution and maintenance."
+      },
+      "project3": {
+        "title": "WPF video game",
+        "subtitle": "Video game developed in C# / WPF, with game state management and user interactions.",
+        "item1": "Code organization in layers to separate logic, display, and data.",
+        "item2": "Event and state management (scores, progression, victory conditions).",
+        "item3": "Simple and readable user interface."
+      },
+      "project4": {
+        "title": "Website mockup (Figma)",
+        "body": "Website mockup design for a fictional client, working on information structure and page ergonomics."
+      },
+      "project5": {
+        "title": "Virtual machine & Raspberry Pi hosting",
+        "body": "Installation and configuration of a virtual machine for a fictional client, then secure website hosting on Raspberry Pi.",
+        "item1": "Virtual machine service configuration and associated documentation.",
+        "item2": "Installation and securing of a web server on Raspberry Pi.",
+        "item3": "Reflection on hosting robustness and security."
+      }
+    },
+    "experience": {
+      "title": "Experience & training",
+      "lead": "A path combining structured university projects and professional experiences with a regular work rhythm.",
+      "professional": "Professional experience",
+      "exp1": {
+        "title": "Drive employee – Super U",
+        "meta": "02/2023 – 01/2024 · Every Saturday",
+        "body": "Customer order preparation, pace and teamwork management in a demanding environment (6:45 AM–2:45 PM schedule alongside high school)."
+      },
+      "exp2": {
+        "title": "Handling – ACR (temporary)",
+        "meta": "04/2025 · 2 days",
+        "body": "Logistics handling assignment, compliance with safety instructions, and quick adaptation to a new organization."
+      },
+      "exp3": {
+        "title": "SAE Projects – Université Savoie Mont-Blanc",
+        "meta": "2024–2025 · Annecy-le-Vieux",
+        "body": "Six group projects combining development, databases, and infrastructure, with graded deliverables and oral presentations."
+      },
+      "training": "Training",
+      "train1": {
+        "title": "IT Degree – Database track",
+        "meta": "Since 09/2024 · Université Savoie Mont-Blanc",
+        "body": "Second year of IT degree, focused on databases, application development, networks, and project management."
+      },
+      "train2": {
+        "title": "STI2D High School Diploma",
+        "meta": "2024 · Lycée Charles Poncet",
+        "body": "Science and Technology of Industry and Sustainable Development."
+      },
+      "languagesTitle": "Languages",
+      "languagesText": "French (native) · English C1 · Italian B1 · Spanish A2",
+      "interestsTitle": "Interests",
+      "interestsText": "Snowboarding · Climbing · Trekking · Trail · Hiking · Counter-Strike"
+    },
+    "contact": {
+      "title": "Contact me",
+      "lead": "Open to internship opportunities in <strong>data</strong>, <strong>database</strong> or <strong>development</strong>. You can contact me via this form or by email.",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "coordinates": "Coordinates",
+      "coordinatesText": "Email: <span class=\"mono\">mael.guimoyas@etu.univ-smb.fr</span><br>Based in: Annecy / Haute Savoie (FR)",
+      "social": "Social",
+      "socialText": "GitHub · LinkedIn"
+    },
+    "footer": {
+      "portfolio": "Portfolio · IT Degree – Database track"
+    },
+    "meta": {
+      "role": "IT Student · Database track"
+    }
+  },
+  "fr": {
+    "nav": {
+      "about": "01. À propos",
+      "skills": "02. Compétences",
+      "projects": "03. Projets",
+      "experience": "04. Parcours",
+      "contact": "05. Contact"
+    },
+    "hero": {
+      "tagline": "Profil orienté données · Stage Data Analyst / Base de données",
+      "title": "Je structure et exploite les <span>données</span><br>pour des décisions fiables.",
+      "description": "Étudiant en 2ᵉ année de BUT Informatique (parcours base de données) à l'Université Savoie Mont-Blanc, je travaille sur la modélisation, la qualité et l'analyse de données, avec un socle solide en SQL, PowerBI et développement C# / WPF.",
+      "downloadCV": "Télécharger mon CV",
+      "contactMe": "Me contacter pour un stage",
+      "status": "Statut",
+      "statusValue": "BUT2 Informatique · USMB",
+      "track": "Parcours",
+      "trackValue": "Base de données",
+      "objective": "Objectif",
+      "objectiveValue": "Stage Data / BDD",
+      "availability": "Disponibilité",
+      "availabilityValue": "Selon calendrier BUT"
+    },
+    "about": {
+      "title": "Profil",
+      "lead": "Je me spécialise dans la conception et l'exploitation de bases de données, avec une attention particulière portée à la qualité des modèles, à la lisibilité du code et à la fiabilité des résultats. Mes projets universitaires m'ont amené à travailler sur des applications WPF, des schémas de bases de données complets et des visualisations PowerBI.",
+      "paragraph": "En parallèle de mes études, je pratique des activités d'endurance comme le trekking, le trail et la randonnée. Ces expériences (Tour du Mont Blanc en autonomie, trek de 5 jours en Italie en bivouac) m'ont appris à préparer, anticiper et suivre un plan dans la durée – des qualités que j'applique à mes projets informatiques.",
+      "philosophy": "Philosophie de travail",
+      "philosophyText": "Je privilégie des solutions simples, documentées et reproductibles. Comprendre le besoin métier, structurer la donnée proprement, puis restituer les résultats de manière claire et actionnable est le fil conducteur de mes projets.",
+      "degrees": "Diplômes",
+      "degreesText": "BUT Informatique – Parcours base de données (en cours)<br>Université Savoie Mont-Blanc<br><br>BAC STI2D (2024) – Lycée Charles Poncet",
+      "languages": "Langues",
+      "languagesText": "Français (natif)<br>Anglais C1<br>Italien B1<br>Espagnol A2",
+      "interests": "Centres d'intérêt",
+      "interestsText": "Snowboard, escalade, trekking, trail, randonnée.<br>Intérêt pour les statistiques et l'analyse de performances (ex : Counter-Strike)."
+    },
+    "skills": {
+      "title": "Compétences techniques",
+      "lead": "Un profil orienté données, avec une base solide en développement, modélisation de bases de données et visualisation.",
+      "webDev": "Développement web",
+      "webDevDesc": "Conception de petites applications et sites web, côté front et back, avec une structure claire et maintenable.",
+      "database": "Bases de données & données",
+      "databaseDesc": "Conception de schémas (MCD / MLD), écriture de requêtes et production de vues décisionnelles via des tableaux de bord.",
+      "csharp": "C# / WPF",
+      "csharpDesc": "Applications desktop avec interface graphique, logique métier et accès aux données.",
+      "modeling": "Modélisation",
+      "modelingDesc": "Modélisation conceptuelle et logique pour des applications transactionnelles ou des usages décisionnels.",
+      "tools": "Outils",
+      "toolsDesc": "Utilisation d'outils orientés développement et data pour structurer, manipuler et analyser les données.",
+      "softSkills": "Soft skills",
+      "softSkillsDesc": "Habitude du travail régulier, du rythme soutenu (cours + travail le week-end) et des projets de groupe notés."
+    },
+    "projects": {
+      "title": "Projets sélectionnés",
+      "lead": "Projets universitaires réalisés en groupe dans le cadre des SAE, illustrant la façon dont je travaille avec les données, les interfaces et l'infrastructure.",
+      "project1": {
+        "title": "Base de données complète & tableau de bord PowerBI",
+        "subtitle": "De la modélisation à la visualisation : conception d'une base de données relationnelle, alimentation en données et création d'un tableau de bord synthétique.",
+        "body": "Projet de groupe visant à partir d'un besoin métier pour concevoir le schéma, écrire les requêtes SQL et proposer une vue décisionnelle claire.",
+        "item1": "Modélisation sous PowerAMC (MCD / MLD) à partir d'un cahier des charges.",
+        "item2": "Mise en place du schéma sous PostgreSQL et insertion des données.",
+        "item3": "Création de mesures et visualisations dans PowerBI pour répondre à des questions métiers précises."
+      },
+      "project2": {
+        "title": "Application WPF de gestion des ventes",
+        "subtitle": "Application desktop C# / WPF pour la gestion de clients, produits et commandes, connectée à une base de données.",
+        "item1": "Écrans de gestion des entités (clients, produits, commandes) avec logique métier.",
+        "item2": "Connexion à une base de données relationnelle et respect des contraintes d'intégrité.",
+        "item3": "Code structuré permettant des évolutions et une maintenance facilitée."
+      },
+      "project3": {
+        "title": "Jeu vidéo en WPF",
+        "subtitle": "Jeu vidéo développé en C# / WPF, avec gestion de l'état du jeu et des interactions utilisateur.",
+        "item1": "Organisation du code en couches pour séparer logique, affichage et données.",
+        "item2": "Gestion des événements et de l'état (scores, progression, conditions de victoire).",
+        "item3": "Interface utilisateur simple et lisible."
+      },
+      "project4": {
+        "title": "Maquette de site web (Figma)",
+        "body": "Conception d'une maquette de site web pour un client fictif, avec travail sur la structure de l'information et l'ergonomie des pages."
+      },
+      "project5": {
+        "title": "Machine virtuelle & hébergement sur Raspberry Pi",
+        "body": "Installation et configuration d'une machine virtuelle pour un client fictif, puis hébergement d'un site web sécurisé sur Raspberry Pi.",
+        "item1": "Configuration de services sur machine virtuelle et documentation associée.",
+        "item2": "Installation et sécurisation d'un serveur web sur Raspberry Pi.",
+        "item3": "Réflexion sur la robustesse et la sécurité de l'hébergement."
+      }
+    },
+    "experience": {
+      "title": "Expériences & formation",
+      "lead": "Un parcours combinant projets universitaires structurés et expériences professionnelles avec un rythme régulier de travail.",
+      "professional": "Expériences professionnelles",
+      "exp1": {
+        "title": "Employé drive – Super U",
+        "meta": "02/2023 – 01/2024 · Tous les samedis",
+        "body": "Préparation des commandes clients, gestion du rythme et du travail en équipe dans un environnement exigeant (horaires 6h45–14h45 en parallèle du lycée)."
+      },
+      "exp2": {
+        "title": "Manutention – ACR (intérim)",
+        "meta": "04/2025 · 2 jours",
+        "body": "Mission de manutention logistique, respect des consignes de sécurité et adaptation rapide à une nouvelle organisation."
+      },
+      "exp3": {
+        "title": "Projets SAE – Université Savoie Mont-Blanc",
+        "meta": "2024–2025 · Annecy-le-Vieux",
+        "body": "Six projets de groupe mêlant développement, bases de données et infrastructure, avec livrables notés et présentations orales."
+      },
+      "training": "Formation",
+      "train1": {
+        "title": "BUT Informatique – Parcours base de données",
+        "meta": "Depuis 09/2024 · Université Savoie Mont-Blanc",
+        "body": "Deuxième année de BUT, orientée vers les bases de données, le développement d'applications, les réseaux et la gestion de projet."
+      },
+      "train2": {
+        "title": "BAC STI2D",
+        "meta": "2024 · Lycée Charles Poncet",
+        "body": "Baccalauréat Sciences et Technologies de l'Industrie et du Développement Durable."
+      },
+      "languagesTitle": "Langues",
+      "languagesText": "Français (natif) · Anglais C1 · Italien B1 · Espagnol A2",
+      "interestsTitle": "Centres d'intérêt",
+      "interestsText": "Snowboard · Escalade · Trekking · Trail · Randonnée · Counter-Strike"
+    },
+    "contact": {
+      "title": "Me contacter",
+      "lead": "Ouvert aux opportunités de stage en <strong>data</strong>, <strong>base de données</strong> ou <strong>développement</strong>. Vous pouvez me contacter via ce formulaire ou par email.",
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "coordinates": "Coordonnées",
+      "coordinatesText": "Email&nbsp;: <span class=\"mono\">mael.guimoyas@etu.univ-smb.fr</span><br>Basé à&nbsp;: Annecy / Haute Savoie (FR)",
+      "social": "Réseaux",
+      "socialText": "GitHub · LinkedIn"
+    },
+    "footer": {
+      "portfolio": "Portfolio · BUT Informatique – Parcours base de données"
+    },
+    "meta": {
+      "role": "Étudiant BUT Informatique · Parcours base de données"
+    }
+  }
+}
