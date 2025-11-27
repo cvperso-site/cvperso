@@ -1,5 +1,4 @@
 
-const translations = {
   "en": {
     "nav": {
       "about": "01. About",
