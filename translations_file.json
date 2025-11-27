@@ -1,8 +1,3 @@
-<script>
-// Ajout de l'année courante dans le footer
-document.getElementById('year').textContent = new Date().getFullYear();
-
-let currentLang = "fr";
 
 const translations = {
   "en": {
@@ -244,7 +239,3 @@ const translations = {
     }
   }
 };
-
-function loadTranslations() {
-    applyTranslations();
-}
