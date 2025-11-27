@@ -1081,7 +1081,7 @@ let currentLang = "fr";
 
 async function loadTranslations() {
     try {
-        const response = await fetch("translations.json");
+        const response = await fetch("translations_file.json");
         translations = await response.json();
         applyTranslations();
     } catch (err) {
