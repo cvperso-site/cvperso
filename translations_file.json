@@ -1,4 +1,10 @@
-{
+<script>
+// Ajout de l'année courante dans le footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let currentLang = "fr";
+
+const translations = {
   "en": {
     "nav": {
       "about": "01. About",
@@ -61,7 +67,8 @@
         "item1": "Modeling with PowerAMC (ERD / LRD) from specifications.",
         "item2": "Schema implementation in PostgreSQL and data insertion.",
         "item3": "Creation of measures and visualizations in PowerBI to answer specific business questions."
-      },
+      }
+    },
     "experience": {
       "title": "Experience & training",
       "lead": "A path combining structured university projects and professional experiences with a regular work rhythm.",
@@ -236,4 +243,8 @@
       "role": "Étudiant BUT Informatique · Parcours base de données"
     }
   }
+};
+
+function loadTranslations() {
+    applyTranslations();
 }
