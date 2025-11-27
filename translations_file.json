@@ -62,32 +62,6 @@
         "item2": "Schema implementation in PostgreSQL and data insertion.",
         "item3": "Creation of measures and visualizations in PowerBI to answer specific business questions."
       },
-      "project2": {
-        "title": "WPF sales management application",
-        "subtitle": "C# / WPF desktop application for managing customers, products, and orders, connected to a database.",
-        "item1": "Entity management screens (customers, products, orders) with business logic.",
-        "item2": "Connection to a relational database with integrity constraints compliance.",
-        "item3": "Structured code allowing for easy evolution and maintenance."
-      },
-      "project3": {
-        "title": "WPF video game",
-        "subtitle": "Video game developed in C# / WPF, with game state management and user interactions.",
-        "item1": "Code organization in layers to separate logic, display, and data.",
-        "item2": "Event and state management (scores, progression, victory conditions).",
-        "item3": "Simple and readable user interface."
-      },
-      "project4": {
-        "title": "Website mockup (Figma)",
-        "body": "Website mockup design for a fictional client, working on information structure and page ergonomics."
-      },
-      "project5": {
-        "title": "Virtual machine & Raspberry Pi hosting",
-        "body": "Installation and configuration of a virtual machine for a fictional client, then secure website hosting on Raspberry Pi.",
-        "item1": "Virtual machine service configuration and associated documentation.",
-        "item2": "Installation and securing of a web server on Raspberry Pi.",
-        "item3": "Reflection on hosting robustness and security."
-      }
-    },
     "experience": {
       "title": "Experience & training",
       "lead": "A path combining structured university projects and professional experiences with a regular work rhythm.",
@@ -205,31 +179,6 @@
         "item1": "Modélisation sous PowerAMC (MCD / MLD) à partir d'un cahier des charges.",
         "item2": "Mise en place du schéma sous PostgreSQL et insertion des données.",
         "item3": "Création de mesures et visualisations dans PowerBI pour répondre à des questions métiers précises."
-      },
-      "project2": {
-        "title": "Application WPF de gestion des ventes",
-        "subtitle": "Application desktop C# / WPF pour la gestion de clients, produits et commandes, connectée à une base de données.",
-        "item1": "Écrans de gestion des entités (clients, produits, commandes) avec logique métier.",
-        "item2": "Connexion à une base de données relationnelle et respect des contraintes d'intégrité.",
-        "item3": "Code structuré permettant des évolutions et une maintenance facilitée."
-      },
-      "project3": {
-        "title": "Jeu vidéo en WPF",
-        "subtitle": "Jeu vidéo développé en C# / WPF, avec gestion de l'état du jeu et des interactions utilisateur.",
-        "item1": "Organisation du code en couches pour séparer logique, affichage et données.",
-        "item2": "Gestion des événements et de l'état (scores, progression, conditions de victoire).",
-        "item3": "Interface utilisateur simple et lisible."
-      },
-      "project4": {
-        "title": "Maquette de site web (Figma)",
-        "body": "Conception d'une maquette de site web pour un client fictif, avec travail sur la structure de l'information et l'ergonomie des pages."
-      },
-      "project5": {
-        "title": "Machine virtuelle & hébergement sur Raspberry Pi",
-        "body": "Installation et configuration d'une machine virtuelle pour un client fictif, puis hébergement d'un site web sécurisé sur Raspberry Pi.",
-        "item1": "Configuration de services sur machine virtuelle et documentation associée.",
-        "item2": "Installation et sécurisation d'un serveur web sur Raspberry Pi.",
-        "item3": "Réflexion sur la robustesse et la sécurité de l'hébergement."
       }
     },
     "experience": {
