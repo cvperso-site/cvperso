@@ -1,0 +1,206 @@
+{
+  "fr": {
+    "nav": {
+      "about": "À propos",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "experience": "Parcours",
+      "contact": "Contact",
+      "downloadCV": "Télécharger CV"
+    },
+    "hero": {
+      "tag": "Profil orienté données • Développement • SQL • WPF",
+      "title": "Je structure, développe et analyse des systèmes basés sur la donnée.",
+      "description": "Étudiant en BUT Informatique (parcours Base de données). Je travaille sur la modélisation, la qualité des données, les applications WPF et la visualisation décisionnelle."
+    },
+    "about": {
+      "title": "À propos",
+      "lead": "Profil orienté conception, structuration et exploitation de données. Habitué aux projets de groupe évalués, au travail hebdomadaire soutenu et à la rigueur nécessaire aux modèles et requêtes SQL.",
+      "paragraph": "En parallèle de mes études, je pratique des activités d'endurance (TMB solo en autonomie, trek 5 jours bivouac en Italie). Ces expériences développent planification, constance et adaptabilité."
+    },
+    "skills": {
+      "title": "Compétences techniques",
+      "development": {
+        "title": "Développement",
+        "description": "Applications WPF, logique métier, optimisation du code, interfaces XAML."
+      },
+      "database": {
+        "title": "Bases de données",
+        "description": "Modélisation MCD/MLD, requêtes avancées, vues décisionnelles PowerBI."
+      },
+      "analysis": {
+        "title": "Analyse & Data",
+        "description": "Nettoyage, structuration et transformation Excel → Base de données."
+      },
+      "web": {
+        "title": "Web",
+        "description": "Développement front/back pour projets universitaires."
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "description": "Configuration système, Raspberry Pi, hébergement sécurisé, VM."
+      }
+    },
+    "projects": {
+      "title": "Projets universitaires",
+      "game": {
+        "title": "Jeu vidéo WPF (SAE)",
+        "date": "USMB • 2025",
+        "description": "Développement complet d'un jeu WPF : interface XAML, logique du jeu, structure orientée objet. Mise en pratique des patterns et d'une architecture propre."
+      },
+      "app": {
+        "title": "Application WPF de gestion des ventes & commandes",
+        "date": "USMB • 2025",
+        "description": "Application desktop connectée à une base PostgreSQL : gestion produits, commandes, clients, interface ergonomique, logique métier complète."
+      },
+      "dashboard": {
+        "title": "Base de données & tableau de bord PowerBI",
+        "date": "USMB • 2025",
+        "description": "Conception MCD/MLD, création du schéma, insertion des données, construction de KPI et dashboards métier."
+      },
+      "hosting": {
+        "title": "Hébergement sécurisé sur Raspberry Pi",
+        "date": "USMB • 2024",
+        "description": "Installation d'un site web sécurisé, configuration réseau, certificats HTTPS, supervision du service."
+      },
+      "vm": {
+        "title": "Configuration et préparation d'une machine virtuelle",
+        "date": "USMB • 2024",
+        "description": "Installation système, configuration réseau, gestion utilisateurs, préparation d'un environnement client complet."
+      }
+    },
+    "experience": {
+      "title": "Parcours & expériences",
+      "education": {
+        "title": "BUT Informatique – Parcours Base de données",
+        "date": "2024–2027 • USMB"
+      },
+      "acr": {
+        "title": "Manutention – ACR",
+        "date": "Avril 2025 • Morzine"
+      },
+      "superu": {
+        "title": "Employé Drive – Super U",
+        "date": "2023–2024 • Marignier",
+        "description": "Travail tous les samedis (6h45–14h45) en parallèle du lycée. Rythme soutenu, gestion d'équipe."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "emailLabel": "Email :",
+      "phoneLabel": "Téléphone :",
+      "locationLabel": "Basé à Annecy (Haute Savoie)",
+      "licenseLabel": "Permis B"
+    },
+    "footer": {
+      "copyright": "© 2025 Mael Guimoyas — Portfolio"
+    }
+  },
+  "en": {
+    "nav": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact",
+      "downloadCV": "Download CV"
+    },
+    "hero": {
+      "tag": "Data-oriented profile • Development • SQL • WPF",
+      "title": "I structure, develop and analyze data-driven systems.",
+      "description": "Computer Science student (Database specialization). I work on data modeling, data quality, WPF applications and business intelligence visualization."
+    },
+    "about": {
+      "title": "About",
+      "lead": "Profile oriented towards design, structuring and data exploitation. Accustomed to evaluated group projects, sustained weekly work and the rigor required for models and SQL queries.",
+      "paragraph": "Alongside my studies, I practice endurance activities (TMB solo in autonomy, 5-day bivouac trek in Italy). These experiences develop planning, consistency and adaptability."
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "development": {
+        "title": "Development",
+        "description": "WPF applications, business logic, code optimization, XAML interfaces."
+      },
+      "database": {
+        "title": "Databases",
+        "description": "MCD/MLD modeling, advanced queries, PowerBI decisional views."
+      },
+      "analysis": {
+        "title": "Analysis & Data",
+        "description": "Cleaning, structuring and transformation Excel → Database."
+      },
+      "web": {
+        "title": "Web",
+        "description": "Front/back development for university projects."
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "description": "System configuration, Raspberry Pi, secure hosting, VM."
+      }
+    },
+    "projects": {
+      "title": "University Projects",
+      "game": {
+        "title": "WPF Video Game (SAE)",
+        "date": "USMB • 2025",
+        "description": "Complete development of a WPF game: XAML interface, game logic, object-oriented structure. Implementation of patterns and clean architecture."
+      },
+      "app": {
+        "title": "WPF Sales & Orders Management Application",
+        "date": "USMB • 2025",
+        "description": "Desktop application connected to a PostgreSQL database: product, order, customer management, ergonomic interface, complete business logic."
+      },
+      "dashboard": {
+        "title": "Database & PowerBI Dashboard",
+        "date": "USMB • 2025",
+        "description": "MCD/MLD design, schema creation, data insertion, construction of KPIs and business dashboards."
+      },
+      "hosting": {
+        "title": "Secure Hosting on Raspberry Pi",
+        "date": "USMB • 2024",
+        "description": "Secure website installation, network configuration, HTTPS certificates, service monitoring."
+      },
+      "vm": {
+        "title": "Virtual Machine Configuration and Setup",
+        "date": "USMB • 2024",
+        "description": "System installation, network configuration, user management, complete client environment preparation."
+      }
+    },
+    "experience": {
+      "title": "Background & Experience",
+      "education": {
+        "title": "Computer Science Degree – Database Track",
+        "date": "2024–2027 • USMB"
+      },
+      "acr": {
+        "title": "Handling – ACR",
+        "date": "April 2025 • Morzine"
+      },
+      "superu": {
+        "title": "Drive Employee – Super U",
+        "date": "2023–2024 • Marignier",
+        "description": "Work every Saturday (6:45 AM–2:45 PM) alongside high school. Sustained pace, team management."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "emailLabel": "Email:",
+      "phoneLabel": "Phone:",
+      "locationLabel": "Based in Annecy (Haute Savoie)",
+      "licenseLabel": "Driver's License"
+    },
+    "footer": {
+      "copyright": "© 2025 Mael Guimoyas — Portfolio"
+    }
+  }
+}
