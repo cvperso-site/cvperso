@@ -740,7 +740,7 @@
         <div class="container hero-inner">
             <div>
                 <div class="hero-tagline" data-i18n="hero.tagline">Profil orienté données · Stage Data Analyst / Base de données</div>
-                <h1 class="hero-title" data-i18n="hero.title">Je structure et exploite les <span>données</span><br>pour des décisions fiables.</h1>
+                <h1 class="hero-title" data-i18n="hero.title" data-html>Je structure et exploite les <span>données</span><br>pour des décisions fiables.</h1>
                 <p class="hero-text" data-i18n="hero.description">
                     Étudiant en 2ᵉ année de BUT Informatique (parcours base de données) à l'Université Savoie Mont-Blanc, je travaille sur la modélisation, la qualité et l'analyse de données, avec un socle solide en SQL, PowerBI et développement C# / WPF.
                 </p>
@@ -803,19 +803,19 @@
                     <div class="about-grid">
                         <div>
                             <div class="about-block-title" data-i18n="about.degrees">Diplômes</div>
-                            <div class="about-block-body" data-i18n="about.degreesText">
+                            <div class="about-block-body" data-i18n="about.degreesText" data-html>
                                 BUT Informatique – Parcours base de données (en cours)<br>Université Savoie Mont-Blanc<br><br>BAC STI2D (2024) – Lycée Charles Poncet
                             </div>
                         </div>
                         <div>
                             <div class="about-block-title" data-i18n="about.languages">Langues</div>
-                            <div class="about-block-body" data-i18n="about.languagesText">
+                            <div class="about-block-body" data-i18n="about.languagesText" data-html>
                                 Français (natif)<br>Anglais C1<br>Italien B1<br>Espagnol A2
                             </div>
                         </div>
                         <div>
                             <div class="about-block-title" data-i18n="about.interests">Centres d'intérêt</div>
-                            <div class="about-block-body" data-i18n="about.interestsText">
+                            <div class="about-block-body" data-i18n="about.interestsText" data-html>
                                 Snowboard, escalade, trekking, trail, randonnée.<br>Intérêt pour les statistiques et l'analyse de performances (ex : Counter-Strike).
                             </div>
                         </div>
@@ -1018,7 +1018,7 @@
                 <div class="section-content">
                     <div>
                         <h2 class="section-title" data-i18n="contact.title">Me contacter</h2>
-                        <p class="section-lead" data-i18n="contact.lead">
+                        <p class="section-lead" data-i18n="contact.lead" data-html>
                             Ouvert aux opportunités de stage en <strong>data</strong>, <strong>base de données</strong> ou <strong>développement</strong>. Vous pouvez me contacter via ce formulaire ou par email.
                         </p>
                     </div>
@@ -1047,7 +1047,7 @@
                         <div class="contact-details">
                             <div>
                                 <div class="contact-label" data-i18n="contact.coordinates">Coordonnées</div>
-                                <p data-i18n="contact.coordinatesText">
+                                <p data-i18n="contact.coordinatesText" data-html>
                                     Email&nbsp;: <span class="mono">mael.guimoyas@etu.univ-smb.fr</span><br>Basé à&nbsp;: Annecy / Haute Savoie (FR)
                                 </p>
                             </div>
@@ -1095,7 +1095,7 @@ function applyTranslations() {
         const text = getNestedTranslation(key, translations[currentLang]);
         if (text) {
             // Pour les éléments qui contiennent du HTML (comme les spans dans les titres)
-            if (el.classList.contains('hero-title') || el.hasAttribute('data-html')) {
+            if (el.hasAttribute('data-html')) {
                 el.innerHTML = text;
             } else {
                 el.textContent = text;
