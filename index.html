@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -66,6 +65,28 @@
 
         .nav-links a:hover {
             color: var(--text);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.35rem 0.6rem;
+            background: var(--bg-card);
+            border: 1px solid #222;
+            border-radius: var(--radius);
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
         }
 
         /* HERO */
@@ -207,6 +228,7 @@
             border-radius: var(--radius);
             color: var(--text);
             font-family: inherit;
+            margin-bottom: 0.8rem;
         }
 
         button {
@@ -225,6 +247,15 @@
             text-align: center;
             font-size: 0.9rem;
         }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+            }
+        }
     </style>
 </head>
 
@@ -234,31 +265,32 @@
        <nav>
             <strong>Mael Guimoyas</strong>
             <div class="nav-links">
-                <a href="#about">À propos</a>
-                <a href="#skills">Compétences</a>
-                <a href="#projects">Projets</a>
-                <a href="#experience">Parcours</a>
-                <a href="#contact">Contact</a>
-                <a href="cv.pdf" download class="btn-cv" style="padding:0.45rem 0.9rem; background:var(--accent); border-radius:var(--radius); color:#000; font-weight:600;">Télécharger CV</a>
+                <a href="#about" data-i18n="nav.about">À propos</a>
+                <a href="#skills" data-i18n="nav.skills">Compétences</a>
+                <a href="#projects" data-i18n="nav.projects">Projets</a>
+                <a href="#experience" data-i18n="nav.experience">Parcours</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a href="cv.pdf" download class="btn-cv" data-i18n="nav.downloadCV" style="padding:0.45rem 0.9rem; background:var(--accent); border-radius:var(--radius); color:#000; font-weight:600;">Télécharger CV</a>
             </div>
         </nav>
-            
     </div>
 </header>
 
 <!-- Language Switcher -->
 <div class="container" style="text-align:right; padding-top:1rem;">
-    <button class="lang-btn" data-lang="fr">FR</button>
-    <button class="lang-btn" data-lang="en">EN</button>
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
 </div>
 
 <main class="container">
 
     <!-- HERO -->
     <section class="hero">
-        <span class="hero-tag">Profil orienté données • Développement • SQL • WPF</span>
-        <h1>Je structure, développe et analyse des systèmes basés sur la donnée.</h1>
-        <p class="hero-desc">Étudiant en BUT Informatique (parcours Base de données). Je travaille sur la modélisation, la qualité des données, les applications WPF et la visualisation décisionnelle.</p>
+        <span class="hero-tag" data-i18n="hero.tag">Profil orienté données • Développement • SQL • WPF</span>
+        <h1 data-i18n="hero.title">Je structure, développe et analyse des systèmes basés sur la donnée.</h1>
+        <p class="hero-desc" data-i18n="hero.description">Étudiant en BUT Informatique (parcours Base de données). Je travaille sur la modélisation, la qualité des données, les applications WPF et la visualisation décisionnelle.</p>
 
         <div class="tags">
             <span class="tag">C# / WPF</span>
@@ -271,53 +303,53 @@
 
     <!-- ABOUT -->
     <section id="about">
-        <h2 class="section-title">À propos</h2>
-        <p class="section-lead">Profil orienté conception, structuration et exploitation de données. Habitué aux projets de groupe évalués, au travail hebdomadaire soutenu et à la rigueur nécessaire aux modèles et requêtes SQL.</p>
+        <h2 class="section-title" data-i18n="about.title">À propos</h2>
+        <p class="section-lead" data-i18n="about.lead">Profil orienté conception, structuration et exploitation de données. Habitué aux projets de groupe évalués, au travail hebdomadaire soutenu et à la rigueur nécessaire aux modèles et requêtes SQL.</p>
 
-        <p>En parallèle de mes études, je pratique des activités d'endurance (TMB solo en autonomie, trek 5 jours bivouac en Italie). Ces expériences développent planification, constance et adaptabilité.</p>
+        <p data-i18n="about.paragraph">En parallèle de mes études, je pratique des activités d'endurance (TMB solo en autonomie, trek 5 jours bivouac en Italie). Ces expériences développent planification, constance et adaptabilité.</p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills">
-        <h2 class="section-title">Compétences techniques</h2>
+        <h2 class="section-title" data-i18n="skills.title">Compétences techniques</h2>
 
         <div class="skills-grid">
 
             <div class="skill-block">
-                <h4>Développement</h4>
-                <p class="skill-desc">Applications WPF, logique métier, optimisation du code, interfaces XAML.</p>
+                <h4 data-i18n="skills.development.title">Développement</h4>
+                <p class="skill-desc" data-i18n="skills.development.description">Applications WPF, logique métier, optimisation du code, interfaces XAML.</p>
                 <div class="tags">
                     <span class="tag">C#</span><span class="tag">WPF</span><span class="tag">Visual Studio</span>
                 </div>
             </div>
 
             <div class="skill-block">
-                <h4>Bases de données</h4>
-                <p class="skill-desc">Modélisation MCD/MLD, requêtes avancées, vues décisionnelles PowerBI.</p>
+                <h4 data-i18n="skills.database.title">Bases de données</h4>
+                <p class="skill-desc" data-i18n="skills.database.description">Modélisation MCD/MLD, requêtes avancées, vues décisionnelles PowerBI.</p>
                 <div class="tags">
                     <span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">PowerAMC</span>
                 </div>
             </div>
 
             <div class="skill-block">
-                <h4>Analyse & Data</h4>
-                <p class="skill-desc">Nettoyage, structuration et transformation Excel → Base de données.</p>
+                <h4 data-i18n="skills.analysis.title">Analyse & Data</h4>
+                <p class="skill-desc" data-i18n="skills.analysis.description">Nettoyage, structuration et transformation Excel → Base de données.</p>
                 <div class="tags">
                     <span class="tag">Excel</span><span class="tag">PowerBI</span>
                 </div>
             </div>
 
             <div class="skill-block">
-                <h4>Web</h4>
-                <p class="skill-desc">Développement front/back pour projets universitaires.</p>
+                <h4 data-i18n="skills.web.title">Web</h4>
+                <p class="skill-desc" data-i18n="skills.web.description">Développement front/back pour projets universitaires.</p>
                 <div class="tags">
                     <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">PHP</span>
                 </div>
             </div>
 
             <div class="skill-block">
-                <h4>Infrastructure</h4>
-                <p class="skill-desc">Configuration système, Raspberry Pi, hébergement sécurisé, VM.</p>
+                <h4 data-i18n="skills.infrastructure.title">Infrastructure</h4>
+                <p class="skill-desc" data-i18n="skills.infrastructure.description">Configuration système, Raspberry Pi, hébergement sécurisé, VM.</p>
                 <div class="tags">
                     <span class="tag">Raspberry Pi</span><span class="tag">Virtualisation</span>
                 </div>
@@ -327,111 +359,165 @@
 
     <!-- PROJECTS -->
     <section id="projects">
-        <h2 class="section-title">Projets universitaires</h2>
+        <h2 class="section-title" data-i18n="projects.title">Projets universitaires</h2>
 
         <div class="projects">
 
             <div class="project">
-                <h3>Jeu vidéo WPF (SAE)</h3>
-                <small>USMB • 2025</small>
-                <p>Développement complet d’un jeu WPF : interface XAML, logique du jeu, structure orientée objet. Mise en pratique des patterns et d’une architecture propre.</p>
+                <h3 data-i18n="projects.game.title">Jeu vidéo WPF (SAE)</h3>
+                <small data-i18n="projects.game.date">USMB • 2025</small>
+                <p data-i18n="projects.game.description">Développement complet d'un jeu WPF : interface XAML, logique du jeu, structure orientée objet. Mise en pratique des patterns et d'une architecture propre.</p>
             </div>
 
             <div class="project">
-                <h3>Application WPF de gestion des ventes & commandes</h3>
-                <small>USMB • 2025</small>
-                <p>Application desktop connectée à une base PostgreSQL : gestion produits, commandes, clients, interface ergonomique, logique métier complète.</p>
+                <h3 data-i18n="projects.app.title">Application WPF de gestion des ventes & commandes</h3>
+                <small data-i18n="projects.app.date">USMB • 2025</small>
+                <p data-i18n="projects.app.description">Application desktop connectée à une base PostgreSQL : gestion produits, commandes, clients, interface ergonomique, logique métier complète.</p>
             </div>
 
             <div class="project">
-                <h3>Base de données & tableau de bord PowerBI</h3>
-                <small>USMB • 2025</small>
-                <p>Conception MCD/MLD, création du schéma, insertion des données, construction de KPI et dashboards métier.</p>
+                <h3 data-i18n="projects.dashboard.title">Base de données & tableau de bord PowerBI</h3>
+                <small data-i18n="projects.dashboard.date">USMB • 2025</small>
+                <p data-i18n="projects.dashboard.description">Conception MCD/MLD, création du schéma, insertion des données, construction de KPI et dashboards métier.</p>
             </div>
 
             <div class="project">
-                <h3>Hébergement sécurisé sur Raspberry Pi</h3>
-                <small>USMB • 2024</small>
-                <p>Installation d’un site web sécurisé, configuration réseau, certificats HTTPS, supervision du service.</p>
+                <h3 data-i18n="projects.hosting.title">Hébergement sécurisé sur Raspberry Pi</h3>
+                <small data-i18n="projects.hosting.date">USMB • 2024</small>
+                <p data-i18n="projects.hosting.description">Installation d'un site web sécurisé, configuration réseau, certificats HTTPS, supervision du service.</p>
             </div>
 
             <div class="project">
-                <h3>Configuration et préparation d'une machine virtuelle</h3>
-                <small>USMB • 2024</small>
-                <p>Installation système, configuration réseau, gestion utilisateurs, préparation d’un environnement client complet.</p>
+                <h3 data-i18n="projects.vm.title">Configuration et préparation d'une machine virtuelle</h3>
+                <small data-i18n="projects.vm.date">USMB • 2024</small>
+                <p data-i18n="projects.vm.description">Installation système, configuration réseau, gestion utilisateurs, préparation d'un environnement client complet.</p>
             </div>
         </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience">
-        <h2 class="section-title">Parcours & expériences</h2>
+        <h2 class="section-title" data-i18n="experience.title">Parcours & expériences</h2>
 
         <div class="timeline">
 
             <div class="timeline-item">
-                <h4>BUT Informatique – Parcours Base de données</h4>
-                <small>2024–2027 • USMB</small>
+                <h4 data-i18n="experience.education.title">BUT Informatique – Parcours Base de données</h4>
+                <small data-i18n="experience.education.date">2024–2027 • USMB</small>
             </div>
 
             <div class="timeline-item">
-                <h4>Manutention – ACR</h4>
-                <small>Avril 2025 • Morzine</small>
+                <h4 data-i18n="experience.acr.title">Manutention – ACR</h4>
+                <small data-i18n="experience.acr.date">Avril 2025 • Morzine</small>
             </div>
 
             <div class="timeline-item">
-                <h4>Employé Drive – Super U</h4>
-                <small>2023–2024 • Marignier</small>
-                <p>Travail tous les samedis (6h45–14h45) en parallèle du lycée. Rythme soutenu, gestion d'équipe.</p>
+                <h4 data-i18n="experience.superu.title">Employé Drive – Super U</h4>
+                <small data-i18n="experience.superu.date">2023–2024 • Marignier</small>
+                <p data-i18n="experience.superu.description">Travail tous les samedis (6h45–14h45) en parallèle du lycée. Rythme soutenu, gestion d'équipe.</p>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
 
         <div class="contact-grid">
             <form>
-                <input type="text" placeholder="Nom" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Sujet" required>
-                <textarea rows="5" placeholder="Message" required></textarea>
-                <button>Envoyer</button>
+                <input type="text" data-i18n-placeholder="contact.name" placeholder="Nom" required>
+                <input type="email" data-i18n-placeholder="contact.email" placeholder="Email" required>
+                <input type="text" data-i18n-placeholder="contact.subject" placeholder="Sujet" required>
+                <textarea rows="5" data-i18n-placeholder="contact.message" placeholder="Message" required></textarea>
+                <button data-i18n="contact.send">Envoyer</button>
             </form>
 
             <div>
-                <p>Email : <strong>maelguimoyas@gmail.com</strong></p>
-                <p>Téléphone : <strong>06 41 81 19 21</strong></p>
-                <p>Basé à Annecy (Haute Savoie)</p>
-                <p>Permis B</p>
+                <p><span data-i18n="contact.emailLabel">Email :</span> <strong>maelguimoyas@gmail.com</strong></p>
+                <p><span data-i18n="contact.phoneLabel">Téléphone :</span> <strong>06 41 81 19 21</strong></p>
+                <p data-i18n="contact.locationLabel">Basé à Annecy (Haute Savoie)</p>
+                <p data-i18n="contact.licenseLabel">Permis B</p>
             </div>
         </div>
     </section>
 </main>
 
 <footer>
-    © 2025 Mael Guimoyas — Portfolio
+    <span data-i18n="footer.copyright">© 2025 Mael Guimoyas — Portfolio</span>
 </footer>
 
 <script>
-// translations object inserted
-const translations = { /* PLACE YOUR TRANSLATION JSON HERE */ };
+// Chargement des traductions depuis le fichier translations.json
+let translations = {};
 let currentLang = 'fr';
 
-function applyTranslations() {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const text = key.split('.').reduce((o,k)=>o&&o[k], translations[currentLang]);
-        if (!text) return;
-        if (text.includes('<')) el.innerHTML = text;
-        else el.textContent = text;
-    });
-    document.documentElement.lang = currentLang;
+// Fonction pour charger le fichier JSON
+async function loadTranslations() {
+    try {
+        const response = await fetch('translations.json');
+        translations = await response.json();
+        applyTranslations();
+    } catch (error) {
+        console.error('Erreur lors du chargement des traductions:', error);
+        // Fallback avec traductions intégrées si le fichier n'est pas trouvé
+        translations = {
+            "fr": {
+                "nav": {
+                    "about": "À propos",
+                    "skills": "Compétences",
+                    "projects": "Projets",
+                    "experience": "Parcours",
+                    "contact": "Contact",
+                    "downloadCV": "Télécharger CV"
+                }
+                // ... (ajoutez ici toutes les traductions en fallback)
+            },
+            "en": {
+                "nav": {
+                    "about": "About",
+                    "skills": "Skills",
+                    "projects": "Projects",
+                    "experience": "Experience",
+                    "contact": "Contact",
+                    "downloadCV": "Download CV"
+                }
+                // ... (ajoutez ici toutes les traductions en fallback)
+            }
+        };
+        applyTranslations();
+    }
 }
 
-// listeners
-window.addEventListener('click', e => {
+function applyTranslations() {
+    // Traduire les textes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const text = key.split('.').reduce((o, k) => o && o[k], translations[currentLang]);
+        if (text) {
+            el.textContent = text;
+        }
+    });
+
+    // Traduire les placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        const text = key.split('.').reduce((o, k) => o && o[k], translations[currentLang]);
+        if (text) {
+            el.placeholder = text;
+        }
+    });
+
+    // Mettre à jour l'attribut lang
+    document.documentElement.lang = currentLang;
+
+    // Mettre à jour les boutons de langue
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+    });
+}
+
+// Gestion du clic sur les boutons de langue
+document.addEventListener('click', e => {
     if (e.target.matches('.lang-btn')) {
         currentLang = e.target.dataset.lang;
         applyTranslations();
@@ -439,10 +525,14 @@ window.addEventListener('click', e => {
     }
 });
 
-// load saved
-const saved = localStorage.getItem('preferredLang');
-if (saved) currentLang = saved;
+// Charger la langue sauvegardée
+const savedLang = localStorage.getItem('preferredLang');
+if (savedLang) {
+    currentLang = savedLang;
+}
 
+// Initialiser les traductions au chargement
+loadTranslations();
 </script>
 </body>
 </html>
